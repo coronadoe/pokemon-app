@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "86791201-04e8-4dcc-b986-330d07d13c38",
+		"name": "pokemon app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Invalid Requests",
+			"item": [
+				{
+					"name": "Page out of bound",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/?page=10000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "10000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Pokemon ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/show/1000000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"show",
+								"1000000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Pokemon Insert data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"some new pokemon\",\r\n    \"total\": \"hkajdhsad\",\r\n    \"hp\": 1,\r\n    \"attack\": \"\",\r\n    \"defence\": 1,\r\n    \"special_attack\": 1,\r\n    \"special_defence\": 1,\r\n    \"speed\": 1,\r\n    \"generation\": 1,\r\n    \"legendary\": 1,\r\n    \"types\": [\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/store",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Pokemon Update data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"total\": 0,\r\n    \"hp\": 0,\r\n    \"attack\": 0,\r\n    \"defence\": 0,\r\n    \"special_attack\": 0,\r\n    \"special_defence\": 0,\r\n    \"speed\": 0,\r\n    \"generation\": 0,\r\n    \"legendary\": 0,\r\n    \"types\": [\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/update/811",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update",
+								"811"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Pokemon with invalid ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/destroy/100001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"destroy",
+								"100001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pokemon List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/?page=1&page_size=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Pokemon By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/show/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"show",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save a Pokemon in the system",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"soemthing\",\r\n    \"total\": 1,\r\n    \"hp\": 1,\r\n    \"attack\": 1,\r\n    \"defence\": 1,\r\n    \"special_attack\": 1,\r\n    \"special_defence\": 1,\r\n    \"speed\": 1,\r\n    \"generation\": 1,\r\n    \"legendary\": 1,\r\n    \"types\": [\r\n        \"grass\",\r\n        \"none\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/store",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Pokemon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"total\": 100,\r\n    \"hp\": 1,\r\n    \"attack\": 10,\r\n    \"defence\": 1,\r\n    \"special_attack\": 1,\r\n    \"special_defence\": 1,\r\n    \"speed\": 1,\r\n    \"generation\": 1,\r\n    \"legendary\": 1,\r\n    \"types\": [\r\n        \"fairy\",\r\n        \"grass\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/update/811",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"update",
+						"811"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove a Pokemon in the system",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/destroy/810",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"destroy",
+						"810"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
