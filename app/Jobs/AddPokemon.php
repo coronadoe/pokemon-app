@@ -45,11 +45,6 @@ class AddPokemon implements ShouldQueue
             $pokemonType->pokemon_id = $pokemon->id;
             $pokemonType->type_id = $type->id;
             $pokemonType->save();
-
-            // PokemonType::create([
-            //     'pokemon_id' => ,
-            //     'type_id' => 
-            // ]);
         });
     }
 
