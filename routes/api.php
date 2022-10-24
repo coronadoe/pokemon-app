@@ -22,5 +22,4 @@ Route::get('/', "Pokemons@index");
 Route::get('/show/{id}', "Pokemons@show");
 Route::post('/store', "Pokemons@store");
 Route::delete('/destroy/{id}', "Pokemons@destroy");
-
-// Route::post('/update', "Pokemons@update");
+Route::post('/update/{id}', "Pokemons@update");
