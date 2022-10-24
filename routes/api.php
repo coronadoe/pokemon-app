@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/', "Pokemons@index");
+// Route::post('/store', "Pokemons@store");
+// Route::get('/show', "Pokemons@show");
+// Route::post('/update', "Pokemons@update");
+// Route::delete('/destroy', "Pokemons@destroy");
