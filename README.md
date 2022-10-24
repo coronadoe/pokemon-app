@@ -1,3 +1,6 @@
+## App Info
+This app was developed using Laravel 8, PHP 7.3 and MySql DB.
+
 ## Set ENV file
 copy and rename the .env.example to .env
 set the values of your local database to the following variables
