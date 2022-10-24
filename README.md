@@ -17,4 +17,4 @@ php artisan test
 
 ## Tool to Use
 Download and install the postman app from https://www.postman.com/downloads/
-Import the pokemon-app.postman_collection which contains the commands for CRUD.
+Import the pokemon-app.postman_collection.json which contains the commands for CRUD.

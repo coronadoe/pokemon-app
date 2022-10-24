@@ -274,7 +274,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/update/811",
+					"raw": "http://localhost:8000/api/update/700",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -283,7 +283,7 @@
 					"path": [
 						"api",
 						"update",
-						"811"
+						"700"
 					]
 				}
 			},
@@ -301,7 +301,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8000/api/destroy/810",
+					"raw": "http://localhost:8000/api/destroy/750",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -310,7 +310,7 @@
 					"path": [
 						"api",
 						"destroy",
-						"810"
+						"750"
 					]
 				}
 			},
