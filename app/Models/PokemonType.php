@@ -12,6 +12,8 @@ class PokemonType extends Model
 
     protected $table = 'pokemon_types';
 
+    protected $fillable = ['pokemon_id', 'type_id'];
+
     public function pokemon(): BelongsTo
     {
         return $this->belongsTo(Pokemon::class, 'pokemon_id', 'id');

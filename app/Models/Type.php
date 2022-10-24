@@ -11,6 +11,8 @@ class Type extends Model
     use HasFactory;
     protected $table = 'types';
 
+    protected $fillable = ['type_name'];
+
     public function pokemonTypes(): HasMany
     {
         return $this->hasMany(PokemonType::class, 'type_id', 'id');

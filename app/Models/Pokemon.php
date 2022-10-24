@@ -12,6 +12,19 @@ class Pokemon extends Model
 
     protected $table = 'pokemons';
 
+    protected $fillable = [
+        'name',
+        'total',
+        'hp',
+        'attack',
+        'defence',
+        'special_attack',
+        'special_defence',
+        'speed',
+        'generation',
+        'legendary',
+    ];
+
     public function pokemonTypes(): HasMany
     {
         return $this->hasMany(PokemonType::class, 'pokemon_id', 'id');

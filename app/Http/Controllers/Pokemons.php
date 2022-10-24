@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PokemonRequest;
 use App\Http\Resources\PokemonResource;
+use App\Jobs\AddPokemon;
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
 
@@ -24,5 +26,15 @@ class Pokemons extends Controller
         return response()->json(['pokemon' => "No product found"]);
     }
 
+    public function store(PokemonRequest $pokemonRequest) {
+
+        if ($pokemonRequest->validated()) {
+            dispatch(new AddPokemon($pokemonRequest->all()));
+            return response()->json(['Success' => 'Pokemon was Added Successfully']);
+        }
+
+        return response()->json(['Failed' => 'Pokemon was not Added']);
+
+    }
 
 }

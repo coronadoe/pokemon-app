@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/', "Pokemons@index");
 Route::get('/show/{id}', "Pokemons@show");
+Route::post('/store', "Pokemons@store");
 
-// Route::post('/store', "Pokemons@store");
 // Route::post('/update', "Pokemons@update");
 // Route::delete('/destroy', "Pokemons@destroy");
