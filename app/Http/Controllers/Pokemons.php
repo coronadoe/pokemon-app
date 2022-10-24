@@ -14,4 +14,15 @@ class Pokemons extends Controller
         return response()->json(['pokemons' => $pokemons]);
     }
 
+    public function show(Request $request, $id)
+    {
+        $pokemon = PokemonResource::make(Pokemon::find($id));
+        if (!empty($pokemon)) {
+            return response()->json(['pokemon' => $pokemon]);
+        }
+
+        return response()->json(['pokemon' => "No product found"]);
+    }
+
+
 }
