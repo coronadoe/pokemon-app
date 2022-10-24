@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PokemonRequest;
 use App\Http\Resources\PokemonResource;
 use App\Jobs\AddPokemon;
+use App\Jobs\DeletePokemon;
+use App\Jobs\DeletePokemonTypes;
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Bus;
 
 class Pokemons extends Controller
 {
@@ -35,6 +38,21 @@ class Pokemons extends Controller
 
         return response()->json(['Failed' => 'Pokemon was not Added']);
 
+    }
+
+    public function destroy(Request $request, $id) {
+        $pokemon = Pokemon::find($id);
+
+        if (empty($pokemon)) {
+            return response()->json(['Failed' => 'Pokemon was not Found']);
+        }
+
+        Bus::chain([
+            new DeletePokemonTypes($pokemon),
+            new DeletePokemon($pokemon),
+        ])->dispatch();
+
+        return response()->json(['Success' => "Pokemon was Deleted Successfully"]);
     }
 
 }
